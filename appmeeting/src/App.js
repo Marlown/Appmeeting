@@ -1,24 +1,24 @@
-import './App.css';
-import React from 'react';
-import CSVImportForm from './CSVImportForm'; // Appel de tout mes focntions 
-import ImportBouton from './ImportBouton';
-import ExportBouton from './ExportBouton';
-import AfficheData from './AfficheData';
+const express = require('express');
 
+const hostname = "0.0.0.0";
+const port = 3000;
 
+const server = express()
 
-function App() {
-  return (
-    <div className="App">
-      <CSVImportForm />
-      <ImportBouton />
-      <AfficheData />
-      <ExportBouton />
-    </div>
+const cors = require('cors');
+server.use(cors());
 
-  );
-}
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://mongo/apinodepmn');
 
-export default App;
+server.use(express.urlencoded());
+server.use(express.json());
 
+// Routes
+const postRoute = require('./api/routes/postRoute.js');
+server.use('/posts', postRoute);
 
+const commentRoute = require('./api/routes/commentRoute');
+server.use('/', commentRoute);
+
+server.listen(port, hostname);
