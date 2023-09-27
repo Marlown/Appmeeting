@@ -1,0 +1,52 @@
+version: '3'
+services:
+  front:
+    container_name: project_node_front
+    image: node:latest
+    working_dir: /home/node/app
+    command: 
+      - /bin/sh
+      - '-c'
+      - 'npm install && npm start'
+    ports:
+      - '3000:3000'
+    volumes:
+      - './appmeeting-front:/home/node/app'
+      - '/home/node/app/node_modules'
+    links: 
+      - mongo
+    depends_on:
+      - mongo
+    networks:
+      - my-network
+
+  back:
+    container_name: project_node_back
+    image: node:latest
+    working_dir: /home/node/app
+    command: 
+      - /bin/sh
+      - '-c'
+      - 'npm install && npm start'
+    ports:
+      - '4000:4000' # Port différent pour le backend
+    volumes:
+      - './appmeeting-back:/home/node/app'
+    links: 
+      - mongo
+    depends_on:
+      - mongo
+    networks:
+      - my-network
+
+  mongo: 
+    container_name: project_mongo
+    image: 'mongo:latest'
+    ports: 
+      - '27017:27017'
+    networks:
+      - my-network
+networks:
+  my-network: 
+    driver: bridge
+
