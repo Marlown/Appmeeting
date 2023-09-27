@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react';
-import CSVImportForm from './CSVImportForm'; // Appel de tout mes focntions 
-import ImportBouton from './ImportBouton';
-import ExportBouton from './ExportBouton';
-import AfficheData from './AfficheData';
+import CSVImportForm from './Appcomponent/formulaire_import/CSVImportForm';
+import ImportBouton from './Appcomponent/bouton/ImportBouton';
+import ExportBouton from './Appcomponent/bouton/ExportBouton';
+import AfficheData from './Appcomponent/Affichage_data/AfficheData';
 
 
 
