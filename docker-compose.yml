@@ -12,6 +12,7 @@ services:
       - '3000:3000'
     volumes:
       - './appmeeting-front:/home/node/app'
+      - '/home/node/app/node_modules'
     links: 
       - mongo
     depends_on:
@@ -43,6 +44,8 @@ services:
     image: 'mongo:latest'
     ports: 
       - '27017:27017'
+    networks:
+      - my-network
 networks:
   my-network: 
     driver: bridge
