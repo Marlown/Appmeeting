@@ -10,6 +10,14 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    start: {
+        type: Date,
+        required: true,
+    },
+    end: {
+        type: Date,
+        required: true,
+    },
     // Ajoutez d'autres champs ici en fonction de vos besoins
 });
 
