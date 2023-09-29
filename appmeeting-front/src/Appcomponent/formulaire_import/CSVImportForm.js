@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+
 
 function CSVImportForm() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -6,9 +7,9 @@ function CSVImportForm() {
   // Gère la soumission du formulaire
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!selectedFile) {
-      alert('Veuillez sélectionner un fichier CSV.');
+      alert("Veuillez sélectionner un fichier CSV.");
       return;
     }
 
@@ -17,16 +18,19 @@ function CSVImportForm() {
 
     // Exemple : Traitement fictif du fichier CSV
     const data = await processCSV(selectedFile);
-    console.log('Données importées :', data);
+    console.log("Données importées :", data);
   };
 
-  // Fonction pour traiter le fichier CSV 
+  // Fonction pour traiter le fichier CSV
   const processCSV = async (file) => {
     // Ici, on utilise la bibliothèque csv-parser pour lire le fichier CSV
     // Déjà installer avec la commande : npm install csv-parser
 
     // Exemple fictif de traitement du fichier CSV
-    const parsedData = [{ name: 'John', email: 'john@example.com' }, { name: 'Alice', email: 'alice@example.com' }];
+    const parsedData = [
+      { name: "John", email: "john@example.com" },
+      { name: "Alice", email: "alice@example.com" },
+    ];
 
     return parsedData;
   };

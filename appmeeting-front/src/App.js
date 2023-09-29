@@ -15,10 +15,6 @@ function App() {
       <AfficheData />
       <ExportBouton />
     </div>
-
   );
 }
-
 export default App;
-
-
