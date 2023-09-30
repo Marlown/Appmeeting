@@ -1,38 +1,60 @@
+/* App.css */
+
+/* Styles pour le conteneur principal de l'application */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh; /* 100% de la hauteur de la vue */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0; /* Couleur d'arrière-plan */
 }
 
-.App-link {
-  color: #61dafb;
+/* Style pour le cadre "Données importer/exporter" */
+.data-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Marge autour du cadre */
+  max-width: 600px; /* Largeur maximale du cadre */
+  width: 100%; /* Prend toute la largeur disponible */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style pour le titre "Données importer/exporter" */
+.data-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; /* Couleur du titre */
 }
+
+/* Style pour les boutons "Importer" et "Exporter" */
+.import-button,
+.export-button {
+  display: block; /* Affiche en tant que bloc (un en dessous de l'autre) */
+  width: 100%; /* Prend toute la largeur du conteneur */
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; /* Marge en haut des boutons */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.import-button:hover,
+.export-button:hover {
+  background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+/* Styles pour les titres */
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333; /* Couleur du titre */
+}
+
+
